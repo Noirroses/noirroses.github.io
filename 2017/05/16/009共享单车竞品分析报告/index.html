@@ -18,7 +18,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>非构造函数的继承 | 格子涂过的夏天</title>
+  <title>共享单车竞品分析报告 | 格子涂过的夏天</title>
   <!-- Meta data -->
     <meta name="baidu-site-verification" content="oa4UJ60WIl" />
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
@@ -251,48 +251,31 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2016-08-16T16:21:23.000Z" itemprop="datePublished">
-          2016-08-17
+      <time datetime="2017-05-16T14:45:34.000Z" itemprop="datePublished">
+          2017-05-16
       </time>
     
 </span>
-                <h1>非构造函数的继承</h1>
+                <h1>共享单车竞品分析报告</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>这个系列的第一部分介绍了”封装”，第二部分介绍了使用构造函数实现”继承”。<br>今天是最后一个部分，介绍不使用构造函数实现”继承”。</p>
-<p>一、什么是”非构造函数”的继承？<br>比如，现在有一个对象，叫做”中国人”。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　<span class="keyword">var</span> Chinese = &#123;</div><div class="line">　　　　nation:<span class="string">'中国'</span></div><div class="line">　　&#125;;</div></pre></td></tr></table></figure>
-<p>还有一个对象，叫做”医生”。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　<span class="keyword">var</span> Doctor =&#123;</div><div class="line">　　　　career:<span class="string">'医生'</span></div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
-<p>请问怎样才能让”医生”去继承”中国人”，也就是说，我怎样才能生成一个”中国医生”的对象？<br>这里要注意，这两个对象都是普通对象，不是构造函数，无法使用构造函数方法实现”继承”。</p>
-<p>二、object()方法</p>
-<p>json格式的发明人Douglas Crockford，提出了一个object()函数，可以做到这一点。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>) </span>&#123;</div><div class="line">　　　　<span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">　　　　F.prototype = o;</div><div class="line">　　　　<span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
-<p>这个object()函数，其实只做一件事，就是把子对象的prototype属性，指向父对象，从而使得子对象与父对象连在一起。<br>使用的时候，第一步先在父对象的基础上，生成子对象：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> Doctor = object(Chinese);</div></pre></td></tr></table></figure>
-<p>然后，再加上子对象本身的属性：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　Doctor.career = <span class="string">'医生'</span>;</div></pre></td></tr></table></figure>
-<p>这时，子对象已经继承了父对象的属性了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　alert(Doctor.nation); <span class="comment">//中国</span></div></pre></td></tr></table></figure></p>
-<p>三、浅拷贝</p>
-<p>除了使用”prototype链”以外，还有另一种思路：把父对象的属性，全部拷贝给子对象，也能实现继承。<br>下面这个函数，就是在做拷贝：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">extendCopy</span>(<span class="params">p</span>) </span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> c = &#123;&#125;;</div><div class="line">　　　　<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123; </div><div class="line">　　　　　　c[i] = p[i];</div><div class="line">　　　　&#125;</div><div class="line">　　　　c.uber = p;</div><div class="line">　　　　<span class="keyword">return</span> c;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
-<p>使用的时候，这样写：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　<span class="keyword">var</span> Doctor = extendCopy(Chinese);</div><div class="line">　　Doctor.career = <span class="string">'医生'</span>;</div><div class="line">　　alert(Doctor.nation); <span class="comment">// 中国</span></div></pre></td></tr></table></figure>
-<p>但是，这样的拷贝有一个问题。那就是，如果父对象的属性等于数组或另一个对象，那么实际上，子对象获得的只是一个内存地址，而不是真正拷贝，因此存在父对象被篡改的可能。<br>请看，现在给Chinese添加一个”出生地”属性，它的值是一个数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　Chinese.birthPlaces = [<span class="string">'北京'</span>,<span class="string">'上海'</span>,<span class="string">'香港'</span>];</div></pre></td></tr></table></figure></p>
-<p>通过extendCopy()函数，Doctor继承了Chinese。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　<span class="keyword">var</span> Doctor = extendCopy(Chinese);</div></pre></td></tr></table></figure>
-<p>然后，我们为Doctor的”出生地”添加一个城市：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　Doctor.birthPlaces.push(<span class="string">'厦门'</span>);</div></pre></td></tr></table></figure></p>
-<p>发生了什么事？Chinese的”出生地”也被改掉了！<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　alert(Doctor.birthPlaces); <span class="comment">//北京, 上海, 香港, 厦门</span></div><div class="line">　　alert(Chinese.birthPlaces); <span class="comment">//北京, 上海, 香港, 厦门</span></div></pre></td></tr></table></figure></p>
-<p>所以，extendCopy()只是拷贝基本类型的数据，我们把这种拷贝叫做”浅拷贝”。这是早期jQuery实现继承的方式。</p>
-<p>四、深拷贝</p>
-<p>所谓”深拷贝”，就是能够实现真正意义上的数组和对象的拷贝。它的实现并不难，只要递归调用”浅拷贝”就行了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">p, c</span>) </span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> c = c || &#123;&#125;;</div><div class="line">　　　　<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;</div><div class="line">　　　　　　<span class="keyword">if</span> (<span class="keyword">typeof</span> p[i] === <span class="string">'object'</span>) &#123;</div><div class="line">　　　　　　　　c[i] = (p[i].constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;</div><div class="line">　　　　　　　　deepCopy(p[i], c[i]);</div><div class="line">　　　　　　&#125; <span class="keyword">else</span> &#123;</div><div class="line">　　　　　　　　　c[i] = p[i];</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125;</div><div class="line">　　　　<span class="keyword">return</span> c;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
-<p>使用的时候这样写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　<span class="keyword">var</span> Doctor = deepCopy(Chinese);</div></pre></td></tr></table></figure></p>
-<p>现在，给父对象加一个属性，值为数组。然后，在子对象上修改这个属性：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">　　Chinese.birthPlaces = [<span class="string">'北京'</span>,<span class="string">'上海'</span>,<span class="string">'香港'</span>];</div><div class="line">　　Doctor.birthPlaces.push(<span class="string">'厦门'</span>);</div></pre></td></tr></table></figure></p>
-<p>这时，父对象就不会受到影响了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　alert(Doctor.birthPlaces); <span class="comment">//北京, 上海, 香港, 厦门</span></div><div class="line">　　alert(Chinese.birthPlaces); <span class="comment">//北京, 上海, 香港</span></div></pre></td></tr></table></figure>
-<p>目前，jQuery库使用的就是这种继承方法。</p>
+      		<p>共享单车是指企业在校园、地铁站点、公交站点、居民区、商业区、公共服务区等提供自行车单车共享服务，是一种分时租赁模式。2016年底以来，国内共享单车突然就火爆了起来。在街头，仿佛一夜之间，共享单车已经到了“泛滥”的地步，各大城市路边排满各种颜色的共享单车。通过一番梳理发现，除了较早入局的摩拜单车、ofo外，到2017年5月，已经有45个共享单车品牌，几十个共享单车品牌汹涌入局，其中甚至还包括电动自行车共享品牌。</p>
+<p><hr></p>
+<p></p><h2>一、市场分析</h2><p></p>
+<h3>1.1市场规模</h3>
+
+<p>2015年至2016年，共享单车市场整体用户数量实现了从245万到1886万巨大增幅。2016年夏天，共享单车开始出现并快速发展，不仅方便了市民出行，也让自行车行业迎来了百年一遇的大好时光。比达咨询预测，2017年，共享单车市场用户规模将继续保持大幅增长，2017年底或达5000万用户规模。</p>
+<p>互联网产业中的马太效应非常明显：在核心层面获得优势的企业，会不断积累市场优势并受到市场、用户、舆论等层面的鼓舞，变得越来越强。而这一效应，在共享单车行业中正体现的淋漓尽致：坐拥产品和技术优势的摩拜单车，其所占据市场份额不断扩大，当前已逼近6成市场份额，超过行业其他所有玩家的总和。共享单车进入到“强者愈强”的循环。</p>
+<p>近日，国内权威第三方数据调研机构速途研究院，通过对共享单车市场发展相关数据的收集与统计，并配合数据调研结果，发布《2017年第一季度国内共享单车市场调研报告》，分析共享单车发展新态势。报告显示，摩拜单车已占据共享单车市场57%份额，是行业第二位ofo共享单车(30%)的1.9倍。</p>
+<h3>1.2融资情况</h3>
+
+<p>截止至2017年4月，中国共享单车行业共计融资90至100亿元人民币。短短两年，这个行业的40多家创业公司聚拢了来自DST、金沙江创投、红杉资本、腾讯等约60亿元的投资，一轮又一轮的融资让共享单车之间的“彩虹大战”愈演愈烈。其中摩拜单车与ofo融资额即超过80亿元人民币，约占行业总融资额85%。目前主流45家共享单车公司，公开信息中，已有12家获得了外部融资。项目获投比例为26.67%。</p>
+<p>目前报告所细分的行业前三大梯队公司，主要融资进程集中在A轮和A+轮，只有摩拜（E轮）和ofo（D轮）进入到了后期的融资进程。</p>
+<p>其中，由政府及事业单位扶持或资金参与的项目有6家，分别是哈罗单车、Funbike、智享单车、CCbike、叮嗒出行、龙城单车。</p>
+<p>完整版我是写在了石墨里，有兴趣查看更多内容请点击下面一段文字：</p>
+<p style="“color:blue;font-weight:800;”"><a href="https://shimo.im/doc/8zLSG00ELSou5yWf" target="_blank" rel="external">点我 点我 点我 点我 点我跳到 [共享单车竞品分析报告]</a></p>
+
 <hr>
 
             <div class="clearfix"></div>
@@ -300,19 +283,15 @@
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2016/08/17/构造函数的继承/" style="float: left;">
-        ← 构造函数的继承
-    </a>
     
-    
-    <a class="pull-right" href="/2016/07/20/前端网页性能最佳实践/">
-        前端网页性能最佳实践 →
+    <a class="pull-right" href="/2017/05/06/008如何“科学”得做需求/">
+        如何“科学”得做需求 →
     </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/08/17/非构造函数的继承/" data-title="非构造函数的继承" data-url="http://maolove.cn/2016/08/17/非构造函数的继承/"></div>
+<div class="ds-thread" data-thread-key="2017/05/16/009共享单车竞品分析报告/" data-title="共享单车竞品分析报告" data-url="http://maolove.cn/2017/05/16/009共享单车竞品分析报告/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"noirroses"};
 (function() {
