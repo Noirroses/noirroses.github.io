@@ -18,7 +18,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Hexo博客从Windows转移到Mac | 格子涂过的夏天</title>
+  <title>Archives: 2017/3 | 格子涂过的夏天</title>
   <!-- Meta data -->
     <meta name="baidu-site-verification" content="oa4UJ60WIl" />
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
@@ -96,7 +96,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -246,69 +246,37 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-<section id="intro">
+
+
+<section id="services">
     <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2016-06-03T15:44:18.000Z" itemprop="datePublished">
-          2016-06-03
-      </time>
-    
-</span>
-                <h1>Hexo博客从Windows转移到Mac</h1>
-            </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2017/03/14/唐杰PM-产品设计的十条理论/">唐杰PM-产品设计的十条理论</a></h4>
+                            
+                            <p><time datetime="2017-03-14T03:18:42.000Z"><a href="/2017/03/14/唐杰PM-产品设计的十条理论/">2017-03-14</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<p>2016-06-03</p>
-<p>刚才突然发现现在已经六月了，时间过的可真快啊，这个博客也搭建了一年多了。五月份我心爱的电脑主板烧了，在维修中心修了一个月竟然还没修好。我也是醉了。</p>
-<p>没电脑的五月份把JS高程3终于看完了，看完之后翻翻之前的好像第六七章又快忘了。</p>
-<p>维修人员的花言巧语让我感觉电脑两三天就好了，我每隔一天去一次，果然还是没修好，耽误了我不少事情。</p>
-<p>考虑了几天那就换个电脑吧，所幸之前电脑的硬盘没有事。初见MAC，感觉很陌生，毕竟要经常远离让我熟悉了10多年的windows系统，难免有一份不舍之情。因为太舍不得(兼容IE567)windows系统，到手后赶紧装了VMbox，并且安装了win10。不过在我打开mac终端敲了几个cd几个ls和vim之后，居然感觉很熟悉。懵懂的我露出了*荡的笑容：“这不就是linux吗！”我对linux命令并未感到一丝害怕，毕竟曾(xiu)经(gai)手(pei)动(zhi)部(wen)署(jian)过OpenStack云计算平台。</p>
-<p>但问题来了，我的HEXO咋办，我*，忘了这个事情了。然后我就开始找教程了。比起去年五月部署博客来说，这次感到很easy，什么安装Node.js、安装git、安装hexo、ssh啊闭着眼都能敲出来。遇到了几个小问题，不过都已经解决。需要注意的是：如果deploy不成功的时候删除根目录和主题下的.git和public文件夹重新g和d，或者测试一下ssh能否连接成功：ssh -T git@github.com。因为前几天换了个域名:maolove.cn。这次也就连网站和邮箱一起DNS解析了。</p>
-<p>其中遇到一个重要的问题：git版本太高导致hexo d 的时候有权限问题:Permission denied (publickey). fatal: Could not read from remote repository.Please make sure you have the correct access rights and the repository exists.</p>
-<p>所以要下载低版本的，我用的是git-1.9.3.tar。</p>
-<p>各种版本的git下载网址是  </p>
-<p><a href="https://www.kernel.org/pub/software/scm/git/ " target="_blank" rel="external">https://www.kernel.org/pub/software/scm/git/ </a></p>
-<p>在一个你喜欢的文件夹（A）里解压一下安装包，然后解压，解压之后在终端进入该文件夹（A）进行编译：</p>
-<p>编译安装的命令如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ cd git<span class="number">-1.9</span><span class="number">.3</span></div><div class="line">$  ./configure –prefix=<span class="regexp">/usr/</span>local</div><div class="line">$  make</div><div class="line">$  sudo make install</div><div class="line"></div><div class="line"><span class="comment">//查看一下git的安装路径</span></div><div class="line"></div><div class="line">$which git</div><div class="line"></div><div class="line"><span class="comment">//这里会得到路径/usr/local/bin/git</span></div></pre></td></tr></table></figure></p>
-<p>总得来说，网上有很多这种问题，简单一点，只要windows的hexo文件夹里面的内容有备份，在MAC上重新搭建一遍之后，将新文件夹里面的配置文件、文章还有主题中配置文件和修改过的代码替换成之前的就可以啦！！</p>
-<hr>
+    </div>
+</section> 
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p></p>
         </div>
-        <nav class="pagination" role="pagination">
-    
-    <a class="pull-left" href="/2016/07/20/前端网页性能最佳实践/" style="float: left;">
-        ← 前端网页性能最佳实践
-    </a>
-    
-    
-    <a class="pull-right" href="/2016/03/30/JS数组的五个迭代方法/">
-        JS数组的五个迭代方法 →
-    </a>
-    
-</nav>
-
-        <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/06/03/Hexo博客从Windows转移到Mac/" data-title="Hexo博客从Windows转移到Mac" data-url="http://maolove.cn/2016/06/03/Hexo博客从Windows转移到Mac/"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"noirroses"};
-(function() {
-	var ds = document.createElement('script');
-	ds.type = 'text/javascript';ds.async = true;
-	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	ds.charset = 'UTF-8';
-	(document.getElementsByTagName('head')[0] 
-	 || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script>
-</div>
     </div>
 </section>
-
-
       
 <!-- ============================ Footer =========================== -->
 
