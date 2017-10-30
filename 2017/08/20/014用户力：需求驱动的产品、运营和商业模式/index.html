@@ -18,7 +18,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>JS笔记 | 格子涂过的夏天</title>
+  <title>用户力：需求驱动的产品、运营和商业模式 | 格子涂过的夏天</title>
   <!-- Meta data -->
     <meta name="baidu-site-verification" content="oa4UJ60WIl" />
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
@@ -243,78 +243,45 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2015-05-29T13:16:38.000Z" itemprop="datePublished">
-          2015-05-29
+      <time datetime="2017-08-20T14:14:12.000Z" itemprop="datePublished">
+          2017-08-20
       </time>
     
 </span>
-                <h1>JS笔记</h1>
+                <h1>用户力：需求驱动的产品、运营和商业模式</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<pre><code>访问子元素节点
-function getChildNode(){
-    var childnode=document.getElementsByTagName(&quot;ul&quot;)[0].childNodes;
-    alert(childnode.length);//节点长度
-    alert(childnode[0].nodeType);//节点类型
-}
-getChildNode();
-</code></pre><hr>
-<pre><code>访问父元素节点
-function getParentNode(){
-    var p=document.getElementById(&quot;pid&quot;);
-    alert(p.parentNode.nodeName);
-}
-getParentNode();
-</code></pre><hr>
-<pre><code>深入JS面向对象
-(function(){//封装
-    var n = &quot;Noirroses&quot;; //外部不能用n
-    function People(name){
-        this._name = name;
-    }//函数 当作 类 来使用
-
-    People.prototype.say = function(){
-        alert(&quot;peo-hello&quot;+this._name+n);
-    }
-    window.People = People;//向外部公开接口
-}());
-
-(function(){
-    function Student(name){
-        this._name=name;
-    }
-    Student.prototype = new People();//继承 People类
-    var superSsay = Student.prototype.say;
-    Student.prototype.say = function(){//复写父类的方法
-        superSsay.call(this);//调用父类的方法函数
-        alert(&quot;stu-hello&quot;+this._name);
-    }
-    window.Student = Student;
-}());
-
-var s = new Student(&quot;Merlin&quot;);
-s.say();
-</code></pre><hr>
+      		<p>《用户力》这本书先讲了互联网，然后是用户需求、产品、运营、商业模式。列举的例子虽然很老但还比较经典，大部分都是微信相关。一些方法论也是作者总结的，不有一些细节还是有帮助的。</p>
+<p>这本书主要从产品、运营和商业模式三个角度阐述了互联网产品如何从0到1的过程，其中最核心的思考模式是一切以用户的视角去思考产品的设计、运营。</p>
+<p>产品前期的需求分析尤为重要，这其中要满足用户“更”的需求，比如京东用大力气做物流，书中说：“需求的贪婪才是互联网用户本质的真实需求。”产品经理主要的工作就是需求决策，决定做哪些功能、不做哪些功能以及功能排优先级。《用户力》中从三个方面考量如何做决策：</p>
+<p>第一个是需求的大小，首先要把用户分级，然后按照分级用户来决定需求大小，普通用户和粉丝用户的需求是大需求，尤其是粉丝用户的需求，顺序是先满足普通用户的大需求然后满足粉丝用户的需求。</p>
+<p>第二个是需求的全过程，也就是用户在满足自己需求的过程中的所有行为，除了基础功能以外，如果符合需求的全过程，就应该满足这部分超出产品边界的需求。</p>
+<p>第三个是需求的一致性，即需求的主线功能。工作的过程中按照这第三个方面来做需求决策，应该是不会有什么问题，根据具体的情况，稍微调整一下即可。</p>
+<p>运营的标题是：只有好产品才能运营成功。但是产品是不断迭代的，可能产品初期不是好产品，但在产品迭代的过程需要不断完善和调整产品功能以便更好的满足用户的需求，我觉得运营的作用不只是在产品成为好产品之后才能运营成功，更应该给产品和研发争取更多的时间和准确的方向来把产品迭代到好的产品，我觉得这应该是书中种子期运营的目标和责任。在产品运营阶段要根据产品的不同时期（种子期、爆发期、平台期、衰退期）关注不同的指标（ 来源量、转化率、活跃度和留存率 ）。</p>
+<p>商业模式基本上都会分为两种:广告、电商（本书中将增至服务也划归到电商里），分析了这些年来成功的商业模式，这其中，无论免费还是收费，有一点很重要： 互联网思维的核心是用户，所以用户需求驱动是商业模式的主线，这个模式通过产品满足用户需求，通过运营不断获得用户沉淀，再通过收入方式将用户价值变现为商业价值。没有盈利模式的产品总是会给人不靠谱的感觉，同时又有很多成功的产品在产品初期是没有任何盈利的，在达到一定的用户规模之后，产品的商业模式也会比较清晰。因为有了用户就会产生收入，一定规模的用户才能为企业创造价值，产品的竞争归根结底是对用户流量的争夺。</p>
+<p>对于现在运营的程序员客栈来说，目前种子期已经过去，是属于爆发期和平台期的间接过程。比如融资消息一发出会爆发吸引很多用户，爆发过后就是处于平台期，产品就要考虑用户体验，用户留存问题，既要留住老用户，也要不断的通过运营产生新用户，运营这时就要着重关注转化率，活跃度和留存率。</p>
+<p>程序员客栈是属于对买方和卖方服务的一个平台，书中说的有道理，要关注对用户或者客户的服务，不断去优化。</p>
+<hr>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2015/05/30/ffmpeg简单用法/" style="float: left;">
-        ← ffmpeg简单用法
+    <a class="pull-left" href="/2017/08/25/015启示录——打造用户喜爱的产品/" style="float: left;">
+        ← 启示录——打造用户喜爱的产品
     </a>
     
     
-    <a class="pull-right" href="/2015/05/26/JS闭包/">
-        JS闭包 →
+    <a class="pull-right" href="/2017/08/08/013读《增长黑客》/">
+        读《增长黑客》 →
     </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2015/05/29/JS笔记/" data-title="JS笔记" data-url="http://maolove.cn/2015/05/29/JS笔记/"></div>
+<div class="ds-thread" data-thread-key="2017/08/20/014用户力：需求驱动的产品、运营和商业模式/" data-title="用户力：需求驱动的产品、运营和商业模式" data-url="http://maolove.cn/2017/08/20/014用户力：需求驱动的产品、运营和商业模式/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"noirroses"};
 (function() {
