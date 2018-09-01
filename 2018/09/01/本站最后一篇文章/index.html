@@ -18,7 +18,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>移动前端不得不了解的html5head头标签 | 喵小猫的夏天</title>
+  <title>最后一篇 | 喵小猫的夏天</title>
   <!-- Meta data -->
     <meta name="baidu-site-verification" content="oa4UJ60WIl" />
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
@@ -241,19 +241,37 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2016-03-27T12:24:57.000Z" itemprop="datePublished">
-          2016-03-27
+      <time datetime="2018-09-01T03:20:27.000Z" itemprop="datePublished">
+          2018-09-01
       </time>
     
 </span>
-                <h1>移动前端不得不了解的html5head头标签</h1>
+                <h1>最后一篇</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>移动端的工作已经越来越成为前端工作的重要内容，除了平常的项目开发，HTML 头部标签功能，特别是meta标签显得非常重要。</p>
-<p>为移动设备添加 viewport：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta name =<span class="string">"viewport"</span> content =<span class="string">"initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"</span>&gt; </div><div class="line">&lt;!-- `width=device-width` 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边 http://bigc.at/ios-webapp-viewport-meta.orz --&gt;</div></pre></td></tr></table></figure></p>
-<p>content 参数：<br>width viewport 宽度(数值/device-width)<br>height viewport 高度(数值/device-height)<br>initial-scale 初始缩放比例<br>maximum-scale 最大缩放比例<br>minimum-scale 最小缩放比例<br>user-scalable 是否允许用户缩放(yes/no)</p>
-<p>移动端的头部标签和meta：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt; &lt;!-- 使用 HTML5 doctype，不区分大小写 --&gt;</div><div class="line">&lt;html lang="zh-cmn-Hans"&gt; &lt;!-- 更加标准的 lang 属性写法 http://zhi.hu/XyIa --&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;!-- 声明文档使用的字符编码 --&gt;</div><div class="line">    &lt;meta charset='utf-8'&gt;</div><div class="line">    &lt;!-- 优先使用 IE 最新版本和 Chrome --&gt;</div><div class="line">    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/&gt;</div><div class="line">    &lt;!-- 页面描述 --&gt;</div><div class="line">    &lt;meta name="description" content="不超过150个字符"/&gt;</div><div class="line">    &lt;!-- 页面关键词 --&gt;</div><div class="line">    &lt;meta name="keywords" content=""/&gt;</div><div class="line">    &lt;!-- 网页作者 --&gt;</div><div class="line">    &lt;meta name="author" content="name, email@gmail.com"/&gt;</div><div class="line">    &lt;!-- 搜索引擎抓取 --&gt;</div><div class="line">    &lt;meta name="robots" content="index,follow"/&gt;</div><div class="line">    &lt;!-- 为移动设备添加 viewport --&gt;</div><div class="line">    &lt;meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"&gt;</div><div class="line">    &lt;!-- `width=device-width` 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边 http://bigc.at/ios-webapp-viewport-meta.orz --&gt; </div><div class="line">    &lt;!-- iOS 设备 begin --&gt;</div><div class="line">    &lt;meta name="apple-mobile-web-app-title" content="标题"/&gt;</div><div class="line">    &lt;!-- 添加到主屏后的标题（iOS 6 新增） --&gt;</div><div class="line">    &lt;meta name="apple-mobile-web-app-capable" content="yes"/&gt;</div><div class="line">    &lt;!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 --&gt;	 </div><div class="line">    &lt;meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL"&gt;</div><div class="line">    &lt;!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari） --&gt;</div><div class="line">    &lt;meta name="apple-mobile-web-app-status-bar-style" content="black"/&gt;</div><div class="line">    &lt;!-- 设置苹果工具栏颜色 --&gt;</div><div class="line">    &lt;meta name="format-detection" content="telphone=no, email=no"/&gt;</div><div class="line">    &lt;!-- 忽略页面中的数字识别为电话，忽略email识别 --&gt;</div><div class="line">    &lt;!-- 启用360浏览器的极速模式(webkit) --&gt;</div><div class="line">    &lt;meta name="renderer" content="webkit"&gt;</div><div class="line">    &lt;!-- 避免IE使用兼容模式 --&gt;</div><div class="line">    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</div><div class="line">    &lt;!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 --&gt;</div><div class="line">    &lt;meta name="HandheldFriendly" content="true"&gt;</div><div class="line">    &lt;!-- 微软的老式浏览器 --&gt;</div><div class="line">    &lt;meta name="MobileOptimized" content="320"&gt;</div><div class="line">    &lt;!-- uc强制竖屏 --&gt;</div><div class="line">    &lt;meta name="screen-orientation" content="portrait"&gt;</div><div class="line">    &lt;!-- QQ强制竖屏 --&gt;</div><div class="line">    &lt;meta name="x5-orientation" content="portrait"&gt;</div><div class="line">    &lt;!-- UC强制全屏 --&gt;</div><div class="line">    &lt;meta name="full-screen" content="yes"&gt;</div><div class="line">    &lt;!-- QQ强制全屏 --&gt;</div><div class="line">    &lt;meta name="x5-fullscreen" content="true"&gt;</div><div class="line">    &lt;!-- UC应用模式 --&gt;</div><div class="line">    &lt;meta name="browsermode" content="application"&gt;</div><div class="line">    &lt;!-- QQ应用模式 --&gt;</div><div class="line">    &lt;meta name="x5-page-mode" content="app"&gt;</div><div class="line">    &lt;!-- windows phone 点击无高光 --&gt;</div><div class="line">    &lt;meta name="msapplication-tap-highlight" content="no"&gt;</div><div class="line">    &lt;!-- iOS 图标 begin --&gt;</div><div class="line">    &lt;link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57-precomposed.png"/&gt;</div><div class="line">    &lt;!-- iPhone 和 iTouch，默认 57x57 像素，必须有 --&gt;</div><div class="line">    &lt;link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png"/&gt;</div><div class="line">    &lt;!-- Retina iPhone 和 Retina iTouch，114x114 像素，可以没有，但推荐有 --&gt;</div><div class="line">    &lt;link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png"/&gt;</div><div class="line">    &lt;!-- Retina iPad，144x144 像素，可以没有，但推荐有 --&gt;</div><div class="line">    &lt;!-- iOS 图标 end --&gt;		 </div><div class="line">    &lt;!-- iOS 启动画面 begin --&gt;</div><div class="line">    &lt;link rel="apple-touch-startup-image" sizes="768x1004" href="/splash-screen-768x1004.png"/&gt;</div><div class="line">    &lt;!-- iPad 竖屏 768 x 1004（标准分辨率） --&gt;</div><div class="line">    &lt;link rel="apple-touch-startup-image" sizes="1536x2008" href="/splash-screen-1536x2008.png"/&gt;</div><div class="line">    &lt;!-- iPad 竖屏 1536x2008（Retina） --&gt;</div><div class="line">    &lt;link rel="apple-touch-startup-image" sizes="1024x748" href="/Default-Portrait-1024x748.png"/&gt;</div><div class="line">    &lt;!-- iPad 横屏 1024x748（标准分辨率） --&gt;</div><div class="line">    &lt;link rel="apple-touch-startup-image" sizes="2048x1496" href="/splash-screen-2048x1496.png"/&gt;</div><div class="line">    &lt;!-- iPad 横屏 2048x1496（Retina） --&gt;</div><div class="line"> 	&lt;link rel="apple-touch-startup-image" href="/splash-screen-320x480.png"/&gt;</div><div class="line">    &lt;!-- iPhone/iPod Touch 竖屏 320x480 (标准分辨率) --&gt;</div><div class="line">    &lt;link rel="apple-touch-startup-image" sizes="640x960" href="/splash-screen-640x960.png"/&gt;</div><div class="line">    &lt;!-- iPhone/iPod Touch 竖屏 640x960 (Retina) --&gt;</div><div class="line">    &lt;link rel="apple-touch-startup-image" sizes="640x1136" href="/splash-screen-640x1136.png"/&gt;</div><div class="line">    &lt;!-- iPhone 5/iPod Touch 5 竖屏 640x1136 (Retina) --&gt;</div><div class="line">    &lt;!-- iOS 启动画面 end --&gt;</div><div class="line">    &lt;!-- iOS 设备 end --&gt;</div><div class="line">    &lt;meta name="msapplication-TileColor" content="#000"/&gt;</div><div class="line">    &lt;!-- Windows 8 磁贴颜色 --&gt;</div><div class="line">    &lt;meta name="msapplication-TileImage" content="icon.png"/&gt;</div><div class="line">    &lt;!-- Windows 8 磁贴图标 --&gt; </div><div class="line">    &lt;link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml"/&gt;</div><div class="line">    &lt;!-- 添加 RSS 订阅 --&gt;</div><div class="line">    &lt;link rel="shortcut icon" type="image/ico" href="/favicon.ico"/&gt;</div><div class="line">    &lt;!-- 添加 favicon icon --&gt;</div><div class="line">    &lt;title&gt;标题&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure></p>
+      		<p>本博客应该搭建于2015年，也有3年了，那时候还在上学，和几个朋友一起在图书馆搭建了github博客，把域名解析过去了。</p>
+<p>大一的时候想着毕业决不会去工作的，一定自己干。对专业课也不专心，编程作业都抄的我发小的（我和我发小 小学一个班 初中一个学校 高中一个学校 然后大学同校同专业..此人编程大神 有天赋可以看出 内推同北邮计算机研究生水平相当进了链家网大数据研发）</p>
+<p>后来大学时光虚虚渺渺的过了大半，开始准备为前端开发职位做准备，于是搭建了此博客 做了一些幼稚作品。在老师的公司实习了几个月，（能力超强的老师，感觉整个青岛的大学里他是最有能力和眼界的。一起工作的时光很值得怀念，希望后期还能有机会一起做点事~）</p>
+<p>大学第三年终于过去了，用“终于”这个词是因为我觉得大学前三年过的真特么没意思..校招面试过了北京一个上市公司的前端开发岗。两个月后去了呆了一天就走了..感到不是想要的工作环境..</p>
+<p>这家公司在中关村，好像是华夏科技大厦，过了信威集团、百度大厦，到了西二旗，来了昌平站..到一个朋友那里暂住。（这个朋友很不错，算是挚友吧，经常交流，带着一个产品梦去了北京实习，对面公司是火币，然后当时eth价格几十块，记得那时候我买了两个结果隔了一天就卖了..到了17年末一万多一个…这就是命 哦此时1987元。现在蛰伏趴着考公务员，给我最深印象的一句话就是：要么自己干 要么工作的话只给国家打工。）</p>
+<p>暂住的几天里我这编程渣渣面了人人网最后一面挂了，后来这人人网跟着区块链割韭菜风出了个人人币被约谈了..挺搞笑的，转型让人民币怎么看？</p>
+<p>闲着无聊就多写点吧，最后一篇了。打算域名也一直续费着反正也不值几个钱。</p>
+<p>让我在北京最终待不下去的一个原因就是晚8点我看到了昌平地铁站那来来往往的人，多的和蚂蚁一样，感到莫名的失望，遂同朋友一起回了青岛。</p>
+<p>在青岛，面了海尔做了前端开发。生活简直美滋滋，从学校步行就能去高大上的写字楼，在青岛老大海尔的电商公司工作。记忆里那段时光只有冬天的霜，闷闷的办公室，还有鬼吹灯之精绝古城..</p>
+<p>年轻也是爱折腾 感觉做程序员老子是真的没天赋 局限性真的很大，那时的想法就是要转产品，干了三个月就走了，浪到毕业和另一个朋友去了杭州找了个天使轮公司做产品运营。</p>
+<p>那时候兼职一个月收入也有了八九千，记忆中的杭州就是炎热的夏天和冰凉的可乐，还有几个有趣的朋友。</p>
+<p>后来接触了币圈，在龙币赚了一把，当时的同事不知道我在干什么，还停留在比特币击鼓传花的意识，好像这公司目前正在做区块链项目，但是今年做这个不晚么..三个月我又辞职了..还是不长记性跳了一家上市金融互联网公司，还是呆了一天就走了。</p>
+<p>扯的有点远了，现在自己做点互联网方面的生意，这半年靠生意也算是挣了二十万吧，交易所里还有部分钱，熊市就扔里面吧。</p>
+<p>自己这一年，慢慢的也看透了一些事：</p>
+<p>如果去工作其实做什么工作都一样，各行各业都有优秀之人，没什么可有鄙视链优越感的，典型例子就是程序员，今年还有优越感么。</p>
+<p>对于做生意的人来说，没有什么一劳永逸的生意，没有一直赚钱的生意，既然做生意就要有心里准备，不行了就换项目，再不行就找资源去学习其他生意或者去工作，只要不亏损不负债有个好心疼一切皆有可能。影响最大的还是江南愤青的一些话，做小概率事件的人才有大概率成功的可能，做大概率稳定事件比如工作 这种让自己变的有资本 概率不大。</p>
+<p>这个世界就是这个样子，学会去接受，有资本的人机会更多，抓住风口拥抱风口拥抱泡沫才有翻身的可能，自己做生意能赚钱就多赚钱，至少以后饿不死还能拓展其他项目做。</p>
+<p>…</p>
+<p>不说了，说多了也挺啰嗦，就这样吧本站最后一篇。以后不写的原因是觉得现在微博什么的都挺不错，写这个也没什么用了，没打算再去工作了。也没人看 对发布什么的也生疏了，为了祭奠本站结束的一种仪式感罢了。</p>
+<p>希望以后自己能够更加驾驭心态，多开阔眼界，多认识人，多实践，生活多点乐趣，多快乐，多发财..</p>
+<p>很俗，但不得不承认现实和自己梦的差距，继续奋斗吧。</p>
+<p>文章完 2018-09-01 11:40:53</p>
 <hr>
 
             <div class="clearfix"></div>
@@ -261,19 +279,15 @@
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2016/03/27/Flexbox布局详解/" style="float: left;">
-        ← Flexbox布局详解
-    </a>
     
-    
-    <a class="pull-right" href="/2016/03/27/js中数组遍历for与for in区别/">
-        js中数组遍历for与for in区别 →
+    <a class="pull-right" href="/2018/03/17/018出售区块链项目本体ONT相关域名/">
+        区块链项目-本体ONT（域名出售） →
     </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/03/27/移动前端不得不了解的html5head头标签/" data-title="移动前端不得不了解的html5head头标签" data-url="http://maolove.cn/2016/03/27/移动前端不得不了解的html5head头标签/"></div>
+<div class="ds-thread" data-thread-key="2018/09/01/本站最后一篇文章/" data-title="最后一篇" data-url="http://maolove.cn/2018/09/01/本站最后一篇文章/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"noirroses"};
 (function() {
